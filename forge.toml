@@ -1,0 +1,6 @@
+[package]
+name = "nova"
+version = "0.0.1"
+description = "A high-performance ECS framework for the Odin programming language."
+autors = ["Okkami"]
+license = "BSD-2-Clause"
