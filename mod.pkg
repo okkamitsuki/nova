@@ -1,0 +1,9 @@
+{
+	"version": "0.0.1",
+	"description": "ECS Library",
+	"url": "https://github.com/okkamitsuki/nova",
+	"readme": "README.md",
+	"license": "BSD-2Clause",
+	"keywords": ["ECS"],
+	"dependencies": {}
+}

@@ -1,0 +1,5 @@
+package nova
+
+Archetype :: struct {
+
+}
