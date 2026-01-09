@@ -12,9 +12,13 @@ init_component_registry :: proc() -> ComponentRegistry {
     }
 }
 
+delete_component_registry :: proc(component_registry: ^ComponentRegistry) {
+    delete(component_registry.registry)
+}
+
 register_component :: proc($T: typeid, component_registry: ^ComponentRegistry) -> Component {
     if meta, ok := component_registry.registry[T]; ok {
-        return meta
+        return &meta
     }
 
     size := u32(size_of(T))

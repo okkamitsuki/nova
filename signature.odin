@@ -9,23 +9,22 @@ Signature :: struct {
     hash: u32,
 }
 
-signature_from_ids :: proc(components_ids: []u32) -> Signature {
+init_signature_from_ids :: proc(components_ids: []u32) -> Signature {
     ids := make([]u32, len(components_ids))
     copy(ids, components_ids)
 
     sort.quick_sort(ids)
 
-    bytes := mem.slice_to_bytes(components_ids)
+    bytes := mem.slice_to_bytes(ids)
     hash := xxhash.XXH32(bytes)
 
     return Signature{
-        components_ids = components_ids,
+        components_ids = ids,
         hash = hash,
     }
 }
 
-
-signature_form_components :: proc(components: []Component) -> Signature {
+init_signature_from_components :: proc(components: ..Component) -> Signature {
     ids := make([]u32, len(components))
 
     for c, i in components {

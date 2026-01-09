@@ -11,4 +11,3 @@ init_component :: proc(component_id:u32, component_size:u32) -> Component {
         size=component_size,
     }
 }
-
